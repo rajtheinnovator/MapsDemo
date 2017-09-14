@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -72,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         MarkerOptions swaraj = new MarkerOptions().position(new LatLng(12.923519, 77.612030)).title("Swaraj").visible(true).icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
 
+        MarkerOptions newOption = new MarkerOptions().position(new LatLng(12.921543, 77.611172)).title("new Option");
+
+        m_map.addPolyline(new PolylineOptions().geodesic(true).add(new LatLng(12.923728, 77.611455))
+                .add(new LatLng(12.923519, 77.612030))
+                .add(new LatLng(12.921543, 77.611172))
+                .add(new LatLng(12.923728, 77.611455)));
+
+        m_map.addMarker(newOption);
         m_map.addMarker(spurthy);
         m_map.addMarker(swaraj);
 

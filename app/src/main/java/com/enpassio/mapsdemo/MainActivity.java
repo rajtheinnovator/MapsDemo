@@ -1,5 +1,6 @@
 package com.enpassio.mapsdemo;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         m_map.addMarker(newOption);
         m_map.addMarker(spurthy);
         m_map.addMarker(swaraj);
+        m_map.addCircle(new CircleOptions().center(bengaluru).radius(15).strokeColor(Color.BLUE).fillColor(Color.LTGRAY));
 
         m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
         m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 1000, null);

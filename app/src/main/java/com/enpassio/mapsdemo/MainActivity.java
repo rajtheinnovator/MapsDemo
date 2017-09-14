@@ -11,6 +11,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -64,8 +65,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         m_map = googleMap;
         LatLng bengaluru = new LatLng(12.923728, 77.611455);
         CameraPosition target = CameraPosition.builder().target(bengaluru).zoom(18).bearing(90).tilt(60).build();
-       // m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
-        m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
 
+
+        MarkerOptions spurthy = new MarkerOptions().position(bengaluru).title("Swaraj");
+
+
+        //m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 1000, null);
+
+        m_map.addMarker(spurthy);
     }
 }

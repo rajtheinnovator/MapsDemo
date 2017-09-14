@@ -5,39 +5,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.enpassio.mapsdemo.MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="2dp">
-    <Button
-        android:layout_width="0dp"
-        android:layout_weight="1"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="map"
-        android:padding="2dp"
-        android:id="@+id/btn_map"/>
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:text="map" />
+
+        <Button
+            android:id="@+id/btn_satellite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:text="satellite" />
+
+        <Button
+            android:id="@+id/btn_hybrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:text="Hybrid" />
+    </LinearLayout>
     <Button
-        android:padding="2dp"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:id="@+id/start_street_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="satellite"
-        android:id="@+id/btn_satellite"/>
-    <Button
-        android:padding="2dp"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="Hybrid"
-        android:id="@+id/btn_hybrid"/>
-</LinearLayout>
+        android:layout_gravity="center"
+        android:text="View StreetView" />
+
     <fragment
-        xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-/>
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1" />
+
 </LinearLayout>
 

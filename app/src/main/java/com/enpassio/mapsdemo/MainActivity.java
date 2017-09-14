@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapReady = true;
         m_map = googleMap;
         LatLng bengaluru = new LatLng(12.923728, 77.611455);
-        CameraPosition target = CameraPosition.builder().target(bengaluru).zoom(18).build();
-        m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        CameraPosition target = CameraPosition.builder().target(bengaluru).zoom(18).bearing(90).tilt(60).build();
+       // m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
 
     }
 }
